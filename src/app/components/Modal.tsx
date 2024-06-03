@@ -1,6 +1,5 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import Cancel from "public\cancel.png"
 import Image from 'next/image';
 import Intro from './Intro';
 
@@ -9,7 +8,7 @@ export default function Modal() {
     const [modal, setModal] = useState(false);
 
     useEffect(() => {
-        console.log("Modal state changed: ", modal);
+        console.log(modal);
     }, [modal]);
 
     const handleClick = () => {
@@ -31,13 +30,14 @@ export default function Modal() {
                     <div className='fixed inset-0 flex justify-center items-center bg-neutral-900 bg-opacity-75 backdrop-blur text-white'>
                         <div className='p-4 text-lg font-semibold bg-gradient-to-r from-slate-300 to-slate-500 relative w-[350px] h-[300px] rounded-lg animate-pop flex items-center justify-evenly flex-col'>
 
+                            {/* Modal close button */}
                             <button onClick={handleClick} className='absolute right-0 top-0 m-2  text-white font-bold py-1 px-2 rounded-full'>
-                                <Image src="/cancel.png" alt="Cancel" width={24} height={24} />
+                                <Image src="/cancel.png" loading='eager' alt="Cancel" width={24} height={24} />
                             </button>
 
                             Made by Zeshan
-                            <div className='flex flex-row gap-2'>
 
+                            <div className='flex flex-row gap-2'>
                                 {/* Github Button */}
                                 <a target="_blank" href="https://github.com/zeshan0603" type="button" className="py-2 px-4 max-w-md flex justify-center items-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="mr-2" viewBox="0 0 1792 1792">
