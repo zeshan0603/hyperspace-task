@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-image: url(././../../public/bg-image.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* A bit of a poppy effect */
+@keyframes pop {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.animate-pop {
+    animation: pop 0.3s linear 1;
+}
