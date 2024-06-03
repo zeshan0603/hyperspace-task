@@ -1,8 +1,7 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Intro from './Intro';
-
 
 export default function Modal() {
     const [modal, setModal] = useState(false);
@@ -14,32 +13,30 @@ export default function Modal() {
     const handleClick = () => {
         setModal(prevModal => !prevModal);
         console.log("Button was clicked, modal is : " + !modal);
-    }
-
+    };
 
     return (
-        // Content Wrapper
-        <div className="flex h-96 bg-fixed justify-center items-center relative  flex-col gap-7 ">
+        <div className="flex h-[calc(100vh-3rem)] bg-fixed justify-start items-center relative flex-col gap-16">
 
-            <Intro></Intro>
+            <Intro />
 
             {/* Modal Open Button */}
-            <button onClick={handleClick} className='bg-zinc-950 hover:bg-zinc-600  text-white font-bold py-2 px-4 border-b-4 border-zinc-700 hover:border-zinc-500 rounded'>Click Me</button>
+            <button onClick={handleClick} className="bg-zinc-950 hover:bg-zinc-600 text-white font-bold py-2 px-4 border-b-4 border-zinc-700 hover:border-zinc-500 rounded">Click Me</button>
             {
                 modal ?
-                    <div className='fixed inset-0 flex justify-center items-center bg-neutral-900 bg-opacity-75 backdrop-blur text-white'>
-                        <div className='p-4 text-lg font-semibold bg-gradient-to-r from-slate-300 to-slate-500 relative w-[350px] h-[300px] rounded-lg animate-pop flex items-center justify-evenly flex-col'>
+                    <div className="fixed inset-0 flex justify-center items-center bg-neutral-900 bg-opacity-75 backdrop-blur text-white">
+                        <div className="p-4 text-lg font-semibold bg-gradient-to-r from-slate-300 to-slate-500 relative w-[90vw] md:w-[350px] h-[70vh] md:h-[300px] rounded-lg animate-pop flex items-center justify-evenly flex-col gap-4">
 
                             {/* Modal close button */}
-                            <button onClick={handleClick} className='absolute right-0 top-0 m-2  text-white font-bold py-1 px-2 rounded-full'>
-                                <Image src="/cancel.png" loading='eager' alt="Cancel" width={24} height={24} />
+                            <button onClick={handleClick} className="absolute right-0 top-0 m-2 text-white font-bold py-1 px-2 rounded-full">
+                                <Image src="/cancel.png" loading="eager" alt="Cancel" width={24} height={24} />
                             </button>
 
                             Made by Zeshan
 
-                            <div className='flex flex-row gap-2'>
+                            <div className="flex flex-col md:flex-row gap-2">
                                 {/* Github Button */}
-                                <a target="_blank" href="https://github.com/zeshan0603" type="button" className="py-2 px-4 max-w-md flex justify-center items-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer">
+                                <a target="_blank" href="https://github.com/zeshan0603" type="button" className="py-2 px-4 max-w-md flex justify-center items-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white w-full md:w-auto transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="mr-2" viewBox="0 0 1792 1792">
                                         <path d="M896 128q209 0 385.5 103t279.5 279.5 103 385.5q0 251-146.5 451.5t-378.5 277.5q-27 5-40-7t-13-30q0-3 .5-76.5t.5-134.5q0-97-52-142 57-6 102.5-18t94-39 81-66.5 53-105 20.5-150.5q0-119-79-206 37-91-8-204-28-9-81 11t-92 44l-38 24q-93-26-192-26t-192 26q-16-11-42.5-27t-83.5-38.5-85-13.5q-45 113-8 204-79 87-79 206 0 85 20.5 150t52.5 105 80.5 67 94 39 102.5 18q-39 36-49 103-21 10-45 15t-57 5-65.5-21.5-55.5-62.5q-19-32-48.5-52t-49.5-24l-20-3q-21 0-29 4.5t-5 11.5 9 14 13 12l7 5q22 10 43.5 38t31.5 51l10 23q13 38 44 61.5t67 30 69.5 7 55.5-3.5l23-4q0 38 .5 88.5t.5 54.5q0 18-13 30t-40 7q-232-77-378.5-277.5t-146.5-451.5q0-209 103-385.5t279.5-279.5 385.5-103zm-477 1103q3-7-7-12-10-3-13 2-3 7 7 12 9 6 13-2zm31 34q7-5-2-16-10-9-16-3-7 5 2 16 10 10 16 3zm30 45q9-7 0-19-8-13-17-6-9 5 0 18t17 7zm42 42q8-8-4-19-12-12-20-3-9 8 4 19 12 12 20 3zm57 25q3-11-13-16-15-4-19 7t13 15q15 6 19-6zm63 5q0-13-17-11-16 0-16 11 0 13 17 11 16 0 16-11zm58-10q-2-11-18-9-16 3-14 15t18 8 14-14z"></path>
                                     </svg>
@@ -47,7 +44,7 @@ export default function Modal() {
                                 </a>
 
                                 {/* Linkedin Button */}
-                                <a href="https://www.linkedin.com/in/zeshan-merchant-237281289/" target="_blank" type="button" className="py-2 px-4 max-w-md flex justify-center items-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer">
+                                <a href="https://www.linkedin.com/in/zeshan-merchant-237281289/" target="_blank" type="button" className="py-2 px-4 max-w-md flex justify-center items-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-500 focus:ring-offset-gray-200 text-white w-full md:w-auto transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg cursor-pointer">
                                     <svg fill="#ffffff" height="16px" width="16px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 310 310" xmlSpace="preserve" stroke="#ffffff" className="mr-2">
                                         <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                                         <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
